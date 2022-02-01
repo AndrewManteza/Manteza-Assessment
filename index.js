@@ -35,6 +35,10 @@ app.get("/",(req,res)=>{
     res.render("index");
 });
 
+app.get("/index",(req,res)=>{
+    res.render("index");
+});
+
 app.get("/contactinfo",(req,res)=>{
     res.render("contactinfo");
 });  
@@ -154,16 +158,7 @@ app.all("/signup", (req,res)=>{
     
     });
 
-app.get("/orderform",(req,res)=>{
-        if(req.session.userid!=null){
-            db.query(`SELECT * FROM users WHERE id = ${req.session.userid}`, (err, rows) => {
-                if(err) throw err;
-                res.render("orderform",{data:rows})
-            })
-        }else{  
-            res.redirect("/");
-        }
-    });
+
 
     app.get("/submitapplication",(req,res)=>{
         if(req.session.userid!=null){
