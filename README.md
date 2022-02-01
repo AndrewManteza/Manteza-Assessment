@@ -3,4 +3,4 @@
 XAMPP 
 Turn on Apache and MySQL
 LocalHost 3000
-npm run start or devstart
+npm run devstart
